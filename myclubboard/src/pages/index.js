@@ -7,6 +7,7 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
+      <h1> Dev Branch </h1>
       MyClubBoard
     </main>
   );
