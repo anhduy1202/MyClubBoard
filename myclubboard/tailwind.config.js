@@ -11,6 +11,7 @@ module.exports = {
         bg_white: "#F1FAFF",
         light_blue: "#CEE8FF",
         dark_blue: "#115D9E",
+        hover_blue: "#0A4C87",
         light_pink: "#F2B8EC",
         aqua: "#4DDFFD",
         light_purple: "#B49AFF",
@@ -35,5 +36,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-3d")({ legacy: true })],
 };
