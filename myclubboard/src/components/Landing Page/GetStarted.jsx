@@ -41,6 +41,7 @@ const GetStarted = () => {
       <button className="font-semibold bg-dark_blue rounded-md text-white text-xl p-2 px-4 mx-auto hover:bg-hover_blue">
         Get Started
       </button>
+      </div>
   );
 };
 
