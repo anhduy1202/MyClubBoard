@@ -3,10 +3,10 @@ import React from "react";
 const GetStarted = () => {
   return (
     <div className="">
-        <p></p>
-        {/* Code goes here */}
+      <p></p>
+      {/* Code goes here */}
     </div>
-  )
+  );
 };
 
 export default GetStarted;
