@@ -13,6 +13,7 @@ const LandingPage = () => {
       <HowItWorks />
       <OfficerRecruit />
       <OurCommunity />
+      <footer className="h-12"></footer>
     </section>
   );
 };
