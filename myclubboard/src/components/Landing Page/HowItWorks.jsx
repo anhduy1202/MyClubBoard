@@ -12,7 +12,7 @@ const HowItWorks = () => {
           <BiSearchAlt className=" bg-light_pink p-5 text-6xl rounded-3xl"></BiSearchAlt>
         </div>
         <p className=" font-semibold text-xl m-2">Browse</p>
-        <p className=" text-sm">Search for any club positions you're interested in, especially from your college</p>
+        <p className=" text-sm">Search for any club positions you&apos;re interested in, especially from your college</p>
       </div>
       <div className="m-10">
         <div className="flex justify-center">
@@ -26,7 +26,7 @@ const HowItWorks = () => {
           <TbViewfinder className=" bg-light_purple p-5 text-6xl rounded-3xl "></TbViewfinder>
         </div>
         <p className=" font-semibold text-xl m-2">Track</p>
-        <p className="text-sm">Keep track of your application after it's submitted</p>
+        <p className="text-sm">Keep track of your application after it&apos;s submitted</p>
       </div>
       {/* Code goes here */}
     </div>
