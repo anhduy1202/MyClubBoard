@@ -3,11 +3,15 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 // This is the GetStarted component that displays the "Explore positions from your fav school clubs" section
 const GetStarted = () => {
   return (
-    <div className="flex-col font-poppins flex justify-center bg-light_blue pb-8">
+    <div className="flex-col font-poppins flex items-center justify-center bg-light_blue pb-8">
       <p className="text-2xl text-center font-bold mt-10">
         Explore positions from your favorite school clubs
       </p>
-      <img className="my-[-64px]" src="/landing_tablet.svg" alt="" />
+      <img
+        className="md:w-[640px] md:mx-4 w-[320px] shadow-2xl my-12 rounded-lg hover:transition-all hover:duration-200"
+        src="/tablet.svg"
+        alt=""
+      />
       <div className="mx-auto mb-5 flex flex-col gap-4">
         <div className="flex items-center ">
           <BsFillCheckCircleFill size={26} color="#115D9E" />
