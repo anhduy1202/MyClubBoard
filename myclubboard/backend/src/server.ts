@@ -1,4 +1,4 @@
-import Elysia from 'Elysia';
+import Elysia from 'elysia';
 import { UniversityController } from './modules/universities';
 
 export function registerControllers(app: Elysia) {
