@@ -9,6 +9,7 @@ export default class UniversityService {
     ) {
         const res = await connection.execute('select * from university')
         await connection.end();
+        console.log("Connection ended")
         return res;
     }
 }
