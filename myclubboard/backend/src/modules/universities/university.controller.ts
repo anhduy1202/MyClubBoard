@@ -1,6 +1,7 @@
 import UniversityService from './university.service';
 import { Delete, Get, Post, Put, BaseController } from '../../utils';
 
+
 class UniversityController extends BaseController {
     routes = [];
     constructor (public universityService: UniversityService) {
@@ -8,7 +9,8 @@ class UniversityController extends BaseController {
     }
     @Get("/")
     async index(ctx: any) {
-        return universityService.getAllUni();
+        let res =  await universityService.getAllUni();
+        return res[0]
     }
 }
 

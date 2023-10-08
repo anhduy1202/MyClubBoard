@@ -1,13 +1,14 @@
 import { NotFoundError } from 'Elysia';
-import { connection } from '../../index';
+const mysql = require('mysql2/promise')
 
+// Create the connection to the database
+const connection = await mysql.createConnection(process.env.DATABASE_URL)
 export default class UniversityService {
     async getAllUni(
         limit?: number
-    ): Promise<{ id: number; content: string | null }[]> {
-        const res = await connection.query('select * from university', function (err: any, results: any) {
-            console.log(results)
-        })
-        return res
+    ) {
+        const res = await connection.execute('select * from university')
+        await connection.end();
+        return res;
     }
 }

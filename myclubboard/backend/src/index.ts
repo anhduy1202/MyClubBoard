@@ -8,10 +8,6 @@ import {
   requestLogger,
   bootLogger,
 } from './utils';
-const mysql = require('mysql2')
-
-// Create the connection to the database
-export const connection = mysql.createConnection(process.env.DATABASE_URL)
 
 try {
   const app = new Elysia()
