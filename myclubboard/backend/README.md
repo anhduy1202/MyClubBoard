@@ -1,15 +1,33 @@
-# Elysia with Bun runtime
+# MyClubBoard Backend
+
+## Tech Stacks:
+- [Elysia.js](https://elysiajs.com/) (Bun HTTP framework)
+- [PlanetScale](https://planetscale.com/) (MySQL Platform)
+- mysql2 (MySQL Client to write SQL query)
 
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+- [Install Bun](https://bun.sh/docs/installation)
+- For Mac/Linux user:
+
+```curl -fsSL https://bun.sh/install | bash ```
+
+- Install packages from Bun (Elysia.js)
+
+``` bun install ```
 
 ## Development
-To start the development server run:
-```bash
+- Before you run the server, you'll need to create a .env file (refer to .env.example for the variables)
+- For **DATABASE_URL**, contact me to get the PlanetScale URL
+- After you have all of the .env variables, then you can run the server by the command:
+
+```
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Open http://localhost:8080/ with your browser to see the result.
+
+## Available Endpoints
+| Method  | Endpoints  | Response Schema |
+| ------------- | ------------- | ------------- |
+| GET  | /universities  | id, state, name, logo |
+| GET | /clubs  | id, name, logo, university_id, state  |
