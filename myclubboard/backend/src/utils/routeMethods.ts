@@ -1,4 +1,4 @@
-import { Route } from './BaseController';
+import { Route } from "./BaseController";
 
 interface ResponseOptions {
   body?: {}; //  validate incoming body.
@@ -6,7 +6,7 @@ interface ResponseOptions {
   params?: {}; // validate path parameters.
   header?: {}; // validate request's headers.
   response?: {}; // validate response type.
-  beforeHandle?: (ctx: any) => 'unauthorized' | string | undefined; // before handling the request
+  beforeHandle?: (ctx: any) => "unauthorized" | string | undefined; // before handling the request
 }
 
 function useBefore(handler: any) {
@@ -22,14 +22,14 @@ function Get(path: string, responseOptions: ResponseOptions = {}) {
   return function (
     target: any,
     propertyKey: string,
-    descriptor: PropertyDescriptor
+    descriptor: PropertyDescriptor,
   ) {
     if (!target.routes) {
       target.routes = [];
     }
 
     target.routes.push({
-      method: 'get',
+      method: "get",
       path,
       handler: descriptor.value,
       responseOptions,
@@ -41,13 +41,13 @@ function Post(path: string, responseOptions: ResponseOptions = {}) {
   return function (
     target: any,
     propertyKey: string,
-    descriptor: PropertyDescriptor
+    descriptor: PropertyDescriptor,
   ) {
     if (!target.routes) {
       target.routes = [];
     }
     target.routes.push({
-      method: 'post',
+      method: "post",
       path,
       handler: descriptor.value,
       responseOptions,
@@ -58,13 +58,13 @@ function Put(path: string, responseOptions: ResponseOptions = {}) {
   return function (
     target: any,
     propertyKey: string,
-    descriptor: PropertyDescriptor
+    descriptor: PropertyDescriptor,
   ) {
     if (!target.routes) {
       target.routes = [];
     }
     target.routes.push({
-      method: 'put',
+      method: "put",
       path,
       handler: descriptor.value,
       responseOptions,
@@ -75,13 +75,13 @@ function Delete(path: string, responseOptions: ResponseOptions = {}) {
   return function (
     target: any,
     propertyKey: string,
-    descriptor: PropertyDescriptor
+    descriptor: PropertyDescriptor,
   ) {
     if (!target.routes) {
       target.routes = [];
     }
     target.routes.push({
-      method: 'delete',
+      method: "delete",
       path,
       handler: descriptor.value,
       responseOptions,
