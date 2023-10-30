@@ -12,6 +12,8 @@ INSERT INTO university (location, state, name, logo) VALUES ('Fullerton','CA', '
 INSERT INTO university (location, state, name, logo) VALUES ('Long Beach','CA', 'Cal State Long Beach', 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/CSU-Longbeach_seal.svg/800px-CSU-Longbeach_seal.svg.png');
 INSERT INTO university (location, state, name, logo) VALUES ('Irvine','CA', 'University California, Irvine', 'https://upload.wikimedia.org/wikipedia/en/0/0e/University_of_California%2C_Irvine_seal.svg');
 INSERT INTO university (location,state, name, logo) VALUES ('Los Angeles', 'CA', 'University California, LA', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UCLA_Bruins_primary_logo.svg/1200px-UCLA_Bruins_primary_logo.svg.png');
+INSERT INTO university (location,state, name, logo) VALUES ('Princeton', 'NJ', 'Princeton University', 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Princeton_seal.svg');
+
 
 -- Create table for club including name, logo, university_id with foreign key to university table
 CREATE TABLE club (
