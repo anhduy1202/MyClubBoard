@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
+import { stateMap } from "./state";
 
 const Filter = ({ state, setState, stateList }) => {
   const [isOpen, setOpen] = useState(false);
@@ -62,7 +63,7 @@ const FilterPopup = ({ isOpen, setOpen, state, stateList, setState }) => {
             key={index}
             className="text-black cursor-pointer p-1 border border-t-1 bg-white font-semibold"
           >
-            {item}
+            {stateMap.get(item)}, {item}
           </div>
         ))}
       </div>
