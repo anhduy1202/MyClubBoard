@@ -26,15 +26,32 @@ CREATE TABLE club (
 
 -- Populate some data, add Cal State Fullerton clubs
 INSERT INTO club (name, logo, university_id) VALUES ('CSUF ACM', 'https://acmcsuf.com/assets/badges/general.svg', 1);
+INSERT INTO club (name, logo, university_id) VALUES ('CSULB ACM', 'https://csulb.acm.org/acm.png', 2);
+INSERT INTO club (name, logo, university_id) VALUES ('CSUF VGDC', 'https://pbs.twimg.com/profile_images/1036524407080988673/GPY1Jbn0_400x400.jpg', 1);
+
+
+-- Create table for club lead including name, email, club_id with foreign key to club table
+CREATE TABLE club_lead (
+    id  INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    club_id INT NOT NULL,
+    KEY club_id_idx (club_id)
+);
 
 -- Create job posting table for each club
--- CREATE TABLE position (
---     id  INT AUTO_INCREMENT PRIMARY KEY,
---     title VARCHAR(255) NOT NULL,
---     description VARCHAR(255) NOT NULL,
---     club_id INT NOT NULL,
---     KEY club_id_idx (club_id)
--- );
+CREATE TABLE posting (
+    id  INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    qualification VARCHAR(255) NOT NULL,
+    tools VARCHAR(255) NOT NULL,
+    responsibilities VARCHAR(255) NOT NULL,
+    posted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    posted_by VARCHAR(255) NOT NULL,
+    club_id INT NOT NULL,
+    KEY club_id_idx (club_id)
+);
 
--- -- Populate some data, add ACM CSUF job postings
--- INSERT INTO position (title, description, club_id) VALUES ('Dev Team Lead', 'Leading the Dev Team to host Dev workshops', 1);
+-- Populate some data, add ACM CSUF job postings
+INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, club_id) VALUES ('Web Officer', 'Passion for web development and open source projects # Open to learning new technologies # Ability to work in a team and to teach others ', 'Google Drive/Docs: To collaborate on presentations, documents, and spreadsheets # Discord: Internal team communication, assistance for student questions # GitHub: To collaborate on code, manage projects, and teach students how to use it', 'Work closely with the Webmaster to maintain the ACM website and OSS projects # Understand the Git workflow and be able to teach it to others # Attend weekly meetings and provide updates on projects', 'Daniel Truong', 1);
+INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, club_id) VALUES ('AI Officer', 'Passion for web development and open source projects # Open to learning new technologies # Ability to work in a team and to teach others ', 'Google Drive/Docs: To collaborate on presentations, documents, and spreadsheets # Discord: Internal team communication, assistance for student questions # GitHub: To collaborate on code, manage projects, and teach students how to use it', 'Work closely with the Webmaster to maintain the ACM website and OSS projects # Understand the Git workflow and be able to teach it to others # Attend weekly meetings and provide updates on projects', 'Daniel Truong', 3);
