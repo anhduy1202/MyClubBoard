@@ -1,6 +1,7 @@
 import React from "react";
 import { LuMapPin } from "react-icons/lu";
 import { AiOutlineHome } from "react-icons/ai";
+import { useRouter } from "next/router";
 
 export const Universities = ({ universities }) => {
   return (
@@ -15,8 +16,12 @@ export const Universities = ({ universities }) => {
 };
 
 const University = ({ university }) => {
+  const router = useRouter();
   return (
-    <div className="text-roboto rounded-lg flex w-100vw p-2 bg-white my-8 drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)]">
+    <div
+      onClick={() => router.push(`/uni/${university.id}`)}
+      className="cursor-pointer text-roboto rounded-lg flex w-100vw p-2 bg-white my-8 drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)]"
+    >
       <img
         className="w-[60px] object-contain rounded-[50%] mr-4"
         src={university.logo}

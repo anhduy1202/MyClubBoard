@@ -9,7 +9,7 @@ class UniversityController extends BaseController {
     }
     @Get("/")
     async index(ctx: any) {
-        let res =  await universityService.getAllUni();
+        let res =  await universityService.getAllUni()
         return res[0]
     }
 }
