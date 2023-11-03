@@ -29,5 +29,6 @@ Open http://localhost:8080/ with your browser to see the result.
 ## Available Endpoints
 | Method  | Endpoints  | Response Schema |
 | ------------- | ------------- | ------------- |
-| GET  | /universities  | id, state, name, logo, num_clubs |
+| GET  | /universities  | id, location, state, name, logo, num_clubs |
 | GET | /clubs  | id, name, logo, university_id, state  |
+| GET | /universities/{id}  | id, title, qualification, tools, responsibilities, posted_date, posted_by, club_id, club_name, club_logo  |

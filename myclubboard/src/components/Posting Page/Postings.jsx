@@ -47,11 +47,7 @@ const Posting = ({ posting }) => {
       <div className="flex flex-col w-full">
         <p className="font-medium">{posting.title}</p>
         <div className="flex items-center mt-2">
-          <BiCalendar
-            size={20}
-            className="mr-[0.25rem]"
-            color="#115D9E"
-          />
+          <BiCalendar size={20} className="mr-[0.25rem]" color="#115D9E" />
           <p>{formattedDate}</p>
           <AiOutlineHome
             size={20}

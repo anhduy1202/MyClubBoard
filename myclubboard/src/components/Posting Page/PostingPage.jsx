@@ -30,11 +30,7 @@ const PostingPage = () => {
         size={36}
         className="cursor-pointer mr-auto"
       />
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Postings postings={postings} />
-      )}
+      {isLoading ? <Loading /> : <Postings postings={postings} />}
     </MainLayout>
   );
 };
