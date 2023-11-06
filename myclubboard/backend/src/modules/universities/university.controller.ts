@@ -1,6 +1,5 @@
-import UniversityService from './university.service';
-import { Delete, Get, Post, Put, BaseController } from '../../utils';
-
+import UniversityService from "./university.service";
+import { Delete, Get, Post, Put, BaseController } from "../../utils";
 
 class UniversityController extends BaseController {
     routes = [];

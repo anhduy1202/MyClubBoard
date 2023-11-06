@@ -1,21 +1,24 @@
 # MyClubBoard Backend
 
 ## Tech Stacks:
+
 - [Elysia.js](https://elysiajs.com/) (Bun HTTP framework)
 - [PlanetScale](https://planetscale.com/) (MySQL Platform)
 - mysql2 (MySQL Client to write SQL query)
 
 ## Getting Started
+
 - [Install Bun](https://bun.sh/docs/installation)
 - For Mac/Linux user:
 
-```curl -fsSL https://bun.sh/install | bash ```
+`curl -fsSL https://bun.sh/install | bash `
 
 - Install packages from Bun (Elysia.js)
 
-``` bun install ```
+`bun install`
 
 ## Development
+
 - Before you run the server, you'll need to create a .env file (refer to .env.example for the variables)
 - For **DATABASE_URL**, contact me to get the PlanetScale URL
 - After you have all of the .env variables, then you can run the server by the command:
