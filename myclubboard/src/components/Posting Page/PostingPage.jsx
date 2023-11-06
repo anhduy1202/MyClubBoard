@@ -11,6 +11,9 @@ const PostingPage = () => {
   const [postings, setPostings] = useState([]);
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
+    if (!id) {
+      return;
+    }
     const getPostings = async () => {
       setLoading(true);
       const response = await fetch(
@@ -22,7 +25,7 @@ const PostingPage = () => {
       setLoading(false);
     };
     getPostings();
-  }, []);
+  }, [id]);
   return (
     <MainLayout custom="bg-bg_white">
       <BiArrowBack
