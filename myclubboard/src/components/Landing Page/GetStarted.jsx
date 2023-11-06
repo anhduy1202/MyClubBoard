@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import Popup from "reactjs-popup";
@@ -52,20 +53,20 @@ const GetStarted = ({ setPopUp, isPopUp }) => {
       >
         <div className="border-4 bg-white text-black text-center border-dark_blue rounded-xl pb-2 px-20 text-xl">
           <div className="pt-2 pb-6 font-semibold">Choose your role</div>
-          <a
+          <Link
             href="/uni"
             className="bg-dark_blue text-white rounded-lg px-6 py-2 font-semibold"
           >
             Student
-          </a>
+          </Link>
           <div className="pb-6 pt-6 font-semibold">Or</div>
           <div className="pb-6 text-white ">
-            <a
+            <Link
               href=""
               className=" bg-dark_blue rounded-lg px-6 py-2 font-semibold"
             >
               Club Lead
-            </a>
+            </Link>
           </div>
         </div>
       </Popup>
