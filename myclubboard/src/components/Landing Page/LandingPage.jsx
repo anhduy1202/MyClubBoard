@@ -7,10 +7,11 @@ import OfficerRecruit from "./OfficerRecruit";
 import OurCommunity from "./OurCommunity";
 // This is the Landing Page component which is the parent component of all components in this folder.
 const LandingPage = () => {
+  const [isPopUp, setPopUp] = React.useState(false);
   return (
-    <MainLayout custom="bg-light_blue">
+    <MainLayout custom={`bg-light_blue ${isPopUp && "opacity-50 blur-sm"}`}>
       <Heading />
-      <GetStarted />
+      <GetStarted isPopUp={isPopUp} setPopUp={setPopUp} />
       <HowItWorks />
       <OfficerRecruit />
       <OurCommunity />
