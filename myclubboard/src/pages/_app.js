@@ -1,5 +1,10 @@
+import {
+  UniversityContext,
+  UniversityDispatchContext,
+} from "@/components/Context/UniversityContext";
 import "@/styles/globals.css";
 import { Poppins, Roboto } from "next/font/google";
+import React from "react";
 
 const poppins = Poppins({
   subsets: ["latin-ext"],
@@ -14,9 +19,35 @@ const roboto = Roboto({
 });
 
 export default function App({ Component, pageProps }) {
+  const initialUniversity = {
+    name: "",
+    logo: "",
+  };
+  function universityReducer(uni, action) {
+    switch (action.type) {
+      case "update": {
+        return {
+          name: action.name,
+          logo: action.logo,
+        };
+      }
+      default: {
+        throw Error("Unknown action: " + action.type);
+      }
+    }
+  }
+  const [universities, dispatch] = React.useReducer(
+    universityReducer,
+    initialUniversity,
+  );
+
   return (
     <main className={`${poppins.variable} bg-bg_white text-black`}>
-      <Component {...pageProps} />
+      <UniversityContext.Provider value={universities}>
+        <UniversityDispatchContext.Provider value={dispatch}>
+          <Component {...pageProps} />
+        </UniversityDispatchContext.Provider>
+      </UniversityContext.Provider>
     </main>
   );
 }
