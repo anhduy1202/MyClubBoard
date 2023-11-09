@@ -25,10 +25,10 @@ CREATE TABLE club (
 );
 
 -- Populate some data, add Cal State Fullerton clubs
-INSERT INTO club (name, logo, university_id) VALUES ('CSUF ACM', 'https://acmcsuf.com/assets/badges/general.svg', 1);
+INSERT INTO club (name, logo, university_id) VALUES ('CSUF ACM', 'https://acmcsuf.com/assets/badges/general-badge.svg', 1);
 INSERT INTO club (name, logo, university_id) VALUES ('CSULB ACM', 'https://csulb.acm.org/acm.png', 2);
 INSERT INTO club (name, logo, university_id) VALUES ('CSUF VGDC', 'https://pbs.twimg.com/profile_images/1036524407080988673/GPY1Jbn0_400x400.jpg', 1);
-
+INSERT INTO club (name, logo, university_id) VALUES ('CSUF ASI', 'https://csufaicc.files.wordpress.com/2018/02/asi_csuf_alternate_logo-041.png?w=332&h=332', 1);
 
 -- Create table for club lead including name, email, club_id with foreign key to club table
 CREATE TABLE club_lead (
@@ -44,8 +44,8 @@ CREATE TABLE posting (
     id  INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     qualification VARCHAR(255) NOT NULL,
-    tools VARCHAR(255) NOT NULL,
-    responsibilities VARCHAR(255) NOT NULL,
+    tools VARCHAR(500) NOT NULL,
+    responsibilities VARCHAR(500) NOT NULL,
     posted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     posted_by VARCHAR(255) NOT NULL,
     club_id INT NOT NULL,
@@ -55,3 +55,4 @@ CREATE TABLE posting (
 -- Populate some data, add ACM CSUF job postings
 INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, club_id) VALUES ('Web Officer', 'Passion for web development and open source projects # Open to learning new technologies # Ability to work in a team and to teach others ', 'Google Drive/Docs: To collaborate on presentations, documents, and spreadsheets # Discord: Internal team communication, assistance for student questions # GitHub: To collaborate on code, manage projects, and teach students how to use it', 'Work closely with the Webmaster to maintain the ACM website and OSS projects # Understand the Git workflow and be able to teach it to others # Attend weekly meetings and provide updates on projects', 'Daniel Truong', 1);
 INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, club_id) VALUES ('AI Officer', 'Passion for web development and open source projects # Open to learning new technologies # Ability to work in a team and to teach others ', 'Google Drive/Docs: To collaborate on presentations, documents, and spreadsheets # Discord: Internal team communication, assistance for student questions # GitHub: To collaborate on code, manage projects, and teach students how to use it', 'Work closely with the Webmaster to maintain the ACM website and OSS projects # Understand the Git workflow and be able to teach it to others # Attend weekly meetings and provide updates on projects', 'Daniel Truong', 3);
+INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, club_id) VALUES ('Building Manager', 'Must be a student at CSUF and is enrolled/registered in a current regular semester as a new or continuing student.', 'vulputate sapien nec sagittis aliquam malesuada.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. Pharetra magna ac placerat vestibulum lectus mauris. Donec et odio pellentesque diam volutpat commodo. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada.', 'Daniel Truong', 4);

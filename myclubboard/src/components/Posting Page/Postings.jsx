@@ -1,12 +1,29 @@
 import { useRouter } from "next/router";
-import React from "react";
-import { AiOutlineHome } from "react-icons/ai";
+import React, { useState } from "react";
+import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
 import { BiCalendar } from "react-icons/bi";
 
 const Postings = ({ postings }) => {
+  const [search, setSearch] = useState("");
+  const handleChange = (e) => {
+    // This function helps us keep track of the search bar value
+    setSearch(e.target.value);
+    console.log(e.target.value); //Open your console and type in the search bar to see the value change
+  };
   return (
     <section className="w-full">
       <div>
+        {/* This is the position/clubs search bar */}
+        <div className="rounded-md mx-12 mt-4 p-2 bg-white flex items-center drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)]">
+          <input
+            type="text"
+            className="outline-none w-full text-black"
+            placeholder="Search Positions/Clubs"
+            value={search}
+            onChange={handleChange}
+          />
+          <AiOutlineSearch size={24} color="black" className="" />
+        </div>
         {postings.error ? (
           <div className="text-center text-2xl font-medium mt-8">
             No postings found

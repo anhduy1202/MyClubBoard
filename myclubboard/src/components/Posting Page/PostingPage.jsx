@@ -29,7 +29,6 @@ const PostingPage = () => {
     // If no university in context, use data from local storage
     if (university.name === "" || university.logo === "") {
       const data = JSON.parse(localStorage.getItem("university"));
-      console.log(data);
       university.name = data.name;
       university.logo = data.logo;
     }
