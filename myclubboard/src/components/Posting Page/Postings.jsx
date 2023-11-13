@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
 import { BiCalendar } from "react-icons/bi";
+import PostingPopup from "./PostingPopup";
 
 const Postings = ({ postings }) => {
   const [search, setSearch] = useState("");
@@ -45,17 +46,23 @@ export default Postings;
 const Posting = ({ posting }) => {
   const router = useRouter();
   const date = new Date(posting.posted_date);
+  const [isOpen, setOpen] = useState(false);
   const option = {
     year: "numeric",
     month: "numeric",
     day: "numeric",
   };
   const formattedDate = date.toLocaleDateString("en-US", option);
+  const handleClick = () => {
+    setOpen(!isOpen);
+  };
+
   return (
     <div
-      onClick={() => router.push(`/posting/${posting.id}`)}
+      onClick={handleClick}
       className="cursor-pointer text-roboto rounded-lg flex w-100vw p-2 bg-white my-8 drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)]"
     >
+      {isOpen && <PostingPopup posting={posting} />}
       <img
         className="w-[60px] object-contain rounded-[50%] mr-4"
         src={posting.club_logo}
