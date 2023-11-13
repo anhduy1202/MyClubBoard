@@ -35,3 +35,4 @@ Open http://localhost:8080/ with your browser to see the result.
 | GET  | /universities  | id, location, state, name, logo, num_clubs |
 | GET | /clubs  | id, name, logo, university_id, state  |
 | GET | /universities/{id}  | id, title, qualification, tools, responsibilities, posted_date, posted_by, club_id, club_name, club_logo  |
+| GET | /posting/{id}  | id, title, qualification, tools, responsibilities, posted_date, posted_by, club_id, club_name, club_logo  |

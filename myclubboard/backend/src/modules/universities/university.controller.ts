@@ -11,6 +11,12 @@ class UniversityController extends BaseController {
         let res =  await universityService.getAllUni()
         return res[0]
     }
+
+    @Get("/:id")
+    async route(ctx: any) {
+        let res = await universityService.getPostingsFromUni(ctx.params.id);
+        return res[0]
+    }
 }
 
 const universityService = new UniversityService();

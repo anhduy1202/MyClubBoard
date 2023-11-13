@@ -5,11 +5,11 @@ import { Delete, Get, Post, Put, BaseController } from '../../utils';
 class PostingController extends BaseController {
     routes = [];
     constructor(public postingService: PostingService) {
-        super("/universities");
+        super("/posting");
     }
     @Get("/:id")
     async index(ctx: any) {
-        let res = await postingService.getPostingsFromUni(ctx.params.id);
+        let res = await postingService.getPosting(ctx.params.id);
         return res[0]
     }
 }

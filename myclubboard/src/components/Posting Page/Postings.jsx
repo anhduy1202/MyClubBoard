@@ -42,7 +42,7 @@ const Postings = ({ postings }) => {
 
 export default Postings;
 
-const Posting = ({ posting }) => {
+export const Posting = ({ posting }) => {
   const date = new Date(posting.posted_date);
   const [isOpen, setOpen] = useState(false);
   const option = {
