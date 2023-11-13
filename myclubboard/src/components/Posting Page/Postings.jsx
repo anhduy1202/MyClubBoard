@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
 import { BiCalendar } from "react-icons/bi";
@@ -44,7 +43,6 @@ const Postings = ({ postings }) => {
 export default Postings;
 
 const Posting = ({ posting }) => {
-  const router = useRouter();
   const date = new Date(posting.posted_date);
   const [isOpen, setOpen] = useState(false);
   const option = {
@@ -62,7 +60,7 @@ const Posting = ({ posting }) => {
       onClick={handleClick}
       className="cursor-pointer text-roboto rounded-lg flex w-100vw p-2 bg-white my-8 drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)]"
     >
-      {isOpen && <PostingPopup posting={posting} />}
+      <PostingPopup open={isOpen} posting={posting} date={formattedDate} />
       <img
         className="w-[60px] object-contain rounded-[50%] mr-4"
         src={posting.club_logo}
