@@ -31,11 +31,11 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
     <div>
       <div className="flex items-center justify-center gap-4 ">
         <img
-          className="w-[60px] h-[60px] object-contain"
+          className="w-[60px] md:w-[120px] object-contain"
           src={posting.club_logo}
           alt="posting image"
         />
-        <p className="font-medium text-sm">{posting.club_name}</p>
+        <p className="font-medium text-sm md:text-3xl">{posting.club_name}</p>
         {isPopup && (
           <AiOutlineClose
             size={24}
@@ -50,20 +50,23 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
         <ToastContainer />
       </div>
       <div className={`mt-4 ${!isPopup && `text-center`}`}>
-        <p className="font-bold">{posting.title}</p>
-        <p className="text-sm font-light"> Posted on: {date} </p>
+        <p className="font-bold md:text-xl">{posting.title}</p>
+        <p className="text-sm md:text-lg font-light"> Posted on: {date} </p>
         <div
           onClick={copyToClipboard}
-          className="cursor-pointer text-sm font-medium mt-4 gap-2 flex items-center justify-center"
+          className="cursor-pointer text-sm md:text-xl font-medium mt-4 gap-2 flex items-center justify-center"
         >
           <LuCopy size={24} color="grey" />
           <p>Copy</p>
         </div>
-        <div className="text-start mt-6">
+        <div className="text-start mt-6 md:text-2xl">
           <p className="font-semibold">Qualifications</p>
           <ul>
             {posting.qualificationSplit.map((p, id) => (
-              <li key={`q-${id}`} className="list-disc ml-4 mt-2 text-sm">
+              <li
+                key={`q-${id}`}
+                className="list-disc ml-4 mt-2 text-sm md:text-xl"
+              >
                 {p}
               </li>
             ))}
@@ -71,15 +74,21 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
           <p className="font-semibold mt-4">Tools</p>
           <ul>
             {posting.toolsSplit.map((t, id) => (
-              <li key={`t-${id}`} className="list-disc ml-4 mt-2 text-sm">
+              <li
+                key={`t-${id}`}
+                className="list-disc ml-4 mt-2 text-sm md:text-xl"
+              >
                 {t}
               </li>
             ))}
           </ul>
-          <p className="font-semibold mt-4 ">Responsibilities</p>
+          <p className="font-semibold mt-4">Responsibilities</p>
           <ul>
             {posting.resSplit.map((r, id) => (
-              <li key={`r-${id}`} className="list-disc ml-4 mt-2 text-sm">
+              <li
+                key={`r-${id}`}
+                className="list-disc ml-4 mt-2 text-sm md:text-xl"
+              >
                 {r}
               </li>
             ))}

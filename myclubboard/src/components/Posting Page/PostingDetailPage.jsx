@@ -4,8 +4,11 @@ import { BiArrowBack } from "react-icons/bi";
 import { MainLayout } from "../Layout/layout";
 import Loading from "../General/Loading";
 import { PostingDetail } from "./PostingPopup";
+import Application from "../Application/Application";
+import { useUser } from "@clerk/nextjs";
 
 const PostingDetailPage = () => {
+  const { user } = useUser();
   const router = useRouter();
   const [posting, setPosting] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -47,7 +50,7 @@ const PostingDetailPage = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
+        <div>
           {posting[0]?.title && (
             <PostingDetail
               posting={posting[0]}
@@ -55,7 +58,8 @@ const PostingDetailPage = () => {
               isPopup={false}
             />
           )}
-        </>
+          <Application user={user} />
+        </div>
       )}
     </MainLayout>
   );
