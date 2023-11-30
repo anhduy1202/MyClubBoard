@@ -5,6 +5,7 @@ import {
 import "@/styles/globals.css";
 import { Poppins, Roboto } from "next/font/google";
 import React from "react";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const poppins = Poppins({
   subsets: ["latin-ext"],
@@ -42,12 +43,14 @@ export default function App({ Component, pageProps }) {
   );
 
   return (
-    <main className={`${poppins.variable} bg-bg_white text-black`}>
-      <UniversityContext.Provider value={universities}>
-        <UniversityDispatchContext.Provider value={dispatch}>
-          <Component {...pageProps} />
-        </UniversityDispatchContext.Provider>
-      </UniversityContext.Provider>
-    </main>
+    <ClerkProvider {...pageProps}>
+      <main className={`${poppins.variable} bg-bg_white text-black`}>
+        <UniversityContext.Provider value={universities}>
+          <UniversityDispatchContext.Provider value={dispatch}>
+            <Component {...pageProps} />
+          </UniversityDispatchContext.Provider>
+        </UniversityContext.Provider>
+      </main>
+    </ClerkProvider>
   );
 }
