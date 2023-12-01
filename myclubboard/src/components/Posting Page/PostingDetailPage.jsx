@@ -4,11 +4,9 @@ import { BiArrowBack } from "react-icons/bi";
 import { MainLayout } from "../Layout/layout";
 import Loading from "../General/Loading";
 import { PostingDetail } from "./PostingPopup";
-import Application from "../Application/Application";
-import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
 
 const PostingDetailPage = () => {
-  const { user } = useUser();
   const router = useRouter();
   const [posting, setPosting] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -50,15 +48,19 @@ const PostingDetailPage = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div>
+        <div className="">
           {posting[0]?.title && (
-            <PostingDetail
-              posting={posting[0]}
-              date={formattedDate}
-              isPopup={false}
-            />
+            <>
+              <PostingDetail
+                posting={posting[0]}
+                date={formattedDate}
+                isPopup={false}
+              />
+              <Link href={posting[0].apply_link} target="_blank">
+                <button className="apply-btn md:text-2xl items"> Apply </button>
+              </Link>
+            </>
           )}
-          <Application user={user} />
         </div>
       )}
     </MainLayout>

@@ -97,7 +97,7 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
         {isPopup && (
           <button
             onClick={() => router.push(`/posting/${posting.id}`)}
-            className="mt-8 mb-4 text-white font-semibold py-1 px-4 rounded-md bg-gradient-to-tl from-[#B49AFF] to-[#05A3FF]"
+            className="apply-btn"
           >
             Apply
           </button>

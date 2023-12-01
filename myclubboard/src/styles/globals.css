@@ -28,7 +28,7 @@ body {
 
 @layer components {
   .apply-btn {
-    @apply bg-sky_300 hover:bg-[#36558F] hover:ease-in-out hover:duration-200 text-white py-1 px-6 rounded-lg mx-8 ml-12;
+    @apply mt-8 mb-4 text-white font-semibold py-1 px-4 rounded-md bg-gradient-to-tl from-[#B49AFF] to-[#05A3FF];
   }
   .form-input {
     @apply border-2 border-light_blue p-2  mt-2 mb-4;
