@@ -1,4 +1,3 @@
-import { UserButton } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
 import Loading from "../General/Loading";
 import { Logo } from "../Landing Page/Heading";
@@ -38,12 +37,7 @@ const UniversityPage = () => {
 
   return (
     <MainLayout custom="bg-bg_white">
-      <div className="flex items-start w-full">
-        <Logo />
-        <div className="ml-auto">
-          <UserButton />
-        </div>
-      </div>
+      <Logo />
       <div className="w-full flex justify-between items-center">
         <p className="mt-4 self-start font-poppins font-semibold text-2xl">
           Universities

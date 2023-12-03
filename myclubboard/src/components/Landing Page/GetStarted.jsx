@@ -62,7 +62,7 @@ const GetStarted = ({ setPopUp, isPopUp }) => {
           <div className="pb-6 pt-6 font-semibold">Or</div>
           <div className="pb-6 text-white ">
             <Link
-              href=""
+              href="/verify"
               className=" bg-dark_blue rounded-lg px-6 py-2 font-semibold"
             >
               Club Lead

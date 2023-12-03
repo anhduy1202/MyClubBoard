@@ -11,6 +11,11 @@ export function handleNotFoundError(error: CustomError, set: any) {
   return { message: "Not Found :(", error };
 }
 
+export function handleNotSignedIn(error: CustomError, set: any) {
+  set.status = 401;
+  return { message: "Not signed in :(", error };
+}
+
 export function handleInternalServerError(error: CustomError, set: any) {
   set.status = 500;
   return { message: "Internal Server Error :(", error };
@@ -38,6 +43,11 @@ export function handleValidation(error: CustomError, set: any) {
 export function handleParseError(error: CustomError, set: any) {
   set.status = 400;
   return { message: "Parse Error :(", error };
+}
+
+export function handleForbiddenError(error: CustomError, set: any) {
+  set.status = 403;
+  return { message: "Forbidden Error :(", error };
 }
 
 export function handleUnknownError(error: CustomError, set: any) {

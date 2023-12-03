@@ -39,6 +39,9 @@ CREATE TABLE club_lead (
     KEY club_id_idx (club_id)
 );
 
+-- Populate some data, add ACM CSUF club leads
+INSERT INTO club_lead (name, email, club_id) VALUES ('Daniel Truong', 'aduy1122@gmail.com', 1);
+
 -- Create job posting table for each club
 CREATE TABLE posting (
     id  INT AUTO_INCREMENT PRIMARY KEY,
@@ -57,3 +60,5 @@ CREATE TABLE posting (
 INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, apply_link, club_id) VALUES ('Web Officer', 'Passion for web development and open source projects # Open to learning new technologies # Ability to work in a team and to teach others ', 'Google Drive/Docs: To collaborate on presentations, documents, and spreadsheets # Discord: Internal team communication, assistance for student questions # GitHub: To collaborate on code, manage projects, and teach students how to use it', 'Work closely with the Webmaster to maintain the ACM website and OSS projects # Understand the Git workflow and be able to teach it to others # Attend weekly meetings and provide updates on projects', 'Daniel Truong', 'https://docs.google.com/forms/d/e/1FAIpQLScXL7bpnHNwRZmViVCHp7PVz0JnN5c-sSIbxfziwJXUMrX7zA/viewform', 1);
 INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, apply_link, club_id) VALUES ('AI Officer', 'Passion for web development and open source projects # Open to learning new technologies # Ability to work in a team and to teach others ', 'Google Drive/Docs: To collaborate on presentations, documents, and spreadsheets # Discord: Internal team communication, assistance for student questions # GitHub: To collaborate on code, manage projects, and teach students how to use it', 'Work closely with the Webmaster to maintain the ACM website and OSS projects # Understand the Git workflow and be able to teach it to others # Attend weekly meetings and provide updates on projects', 'Daniel Truong', 'https://docs.google.com/forms/d/e/1FAIpQLScXL7bpnHNwRZmViVCHp7PVz0JnN5c-sSIbxfziwJXUMrX7zA/viewform',3);
 INSERT INTO posting (title, qualification, tools, responsibilities, posted_by, apply_link, club_id) VALUES ('Building Manager', 'Must be a student at CSUF and is enrolled/registered in a current regular semester as a new or continuing student.', 'vulputate sapien nec sagittis aliquam malesuada.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. Pharetra magna ac placerat vestibulum lectus mauris. Donec et odio pellentesque diam volutpat commodo. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada.', 'Daniel Truong','', 4);
+
+-- 

@@ -4,7 +4,7 @@ import React from "react";
 export const Logo = () => {
   return (
     <Link className="self-start" href={"/"}>
-      <img src="/mcb_logo.svg" alt="" />
+      <img src="/mcb_logo.svg" className="md:w-[42px]" alt="" />
     </Link>
   );
 };

@@ -1,5 +1,5 @@
 import Elysia from "elysia";
-import cors from "@elysiajs/cors";
+import { cors } from '@elysiajs/cors'
 import bearer from "@elysiajs/bearer";
 import swagger from "@elysiajs/swagger";
 import { registerControllers } from "./server";
@@ -10,7 +10,7 @@ try {
     .use(cors())
     .use(swagger())
     .use(bearer())
-    .onResponse(requestLogger)
+  .onResponse(requestLogger)
     .onError(({ code, error, set }) => ErrorMessages(code, error, set));
   // user routes and middlewates
   registerControllers(app);

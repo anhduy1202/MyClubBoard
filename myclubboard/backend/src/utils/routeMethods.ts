@@ -6,6 +6,8 @@ interface ResponseOptions {
   params?: {}; // validate path parameters.
   header?: {}; // validate request's headers.
   response?: {}; // validate response type.
+  cookies?: {}; // validate request's cookies.
+  jwt?: {}; // validate
   beforeHandle?: (ctx: any) => "unauthorized" | string | undefined; // before handling the request
 }
 

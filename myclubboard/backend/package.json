@@ -7,14 +7,18 @@
   },
   "dependencies": {
     "@elysiajs/bearer": "^0.7.0",
-    "@elysiajs/cors": "^0.7.1",
+    "@elysiajs/cors": "^0.7.2",
+    "@elysiajs/jwt": "^0.7.0",
     "@elysiajs/swagger": "^0.7.3",
     "chalk": "^5.3.0",
     "dotenv": "^16.3.1",
     "elysia": "latest",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.1.0",
     "mysql2": "^3.6.1"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
     "bun-types": "latest"
   },
   "module": "src/index.js"
