@@ -63,10 +63,7 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
           <p className="font-semibold">Qualifications</p>
           <ul>
             {posting.qualificationSplit.map((p, id) => (
-              <li
-                key={`q-${id}`}
-                className="list-disc ml-4 mt-2 text-sm md:text-xl"
-              >
+              <li key={`q-${id}`} className=" mt-2 text-sm md:text-xl">
                 {p}
               </li>
             ))}
@@ -74,10 +71,7 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
           <p className="font-semibold mt-4">Tools</p>
           <ul>
             {posting.toolsSplit.map((t, id) => (
-              <li
-                key={`t-${id}`}
-                className="list-disc ml-4 mt-2 text-sm md:text-xl"
-              >
+              <li key={`t-${id}`} className=" mt-2 text-sm md:text-xl">
                 {t}
               </li>
             ))}
@@ -85,10 +79,7 @@ export const PostingDetail = ({ posting, date, isPopup }) => {
           <p className="font-semibold mt-4">Responsibilities</p>
           <ul>
             {posting.resSplit.map((r, id) => (
-              <li
-                key={`r-${id}`}
-                className="list-disc ml-4 mt-2 text-sm md:text-xl"
-              >
+              <li key={`r-${id}`} className=" mt-2 text-sm md:text-xl">
                 {r}
               </li>
             ))}

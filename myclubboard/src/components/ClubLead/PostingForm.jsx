@@ -52,6 +52,13 @@ const PostingForm = (props) => {
   const [application, dispatch] = useReducer(reducer, initialState);
   const [isLoading, setLoading] = useState(false);
   const onSubmit = async () => {
+    // Replace \n with # for application
+    application.responsibilities = application.responsibilities.replace(
+      /\n/g,
+      "#",
+    );
+    application.tools = application.tools.replace(/\n/g, "#");
+    application.qualification = application.qualification.replace(/\n/g, "#");
     const positionData = {
       ...application,
       club_id: clubId,
@@ -111,7 +118,7 @@ const PostingForm = (props) => {
               />
               <p className="error-msg">{errors.title?.message}</p>
               <p> Qualification </p>
-              <input
+              <textarea
                 {...register("qualification")}
                 name="qualification"
                 value={application.qualification}
@@ -129,7 +136,7 @@ const PostingForm = (props) => {
               />
               <p className="error-msg">{errors.qualification?.message}</p>
               <p> Tools </p>
-              <input
+              <textarea
                 {...register("tools")}
                 name="tools"
                 value={application.tools}
@@ -142,7 +149,7 @@ const PostingForm = (props) => {
               />
               <p className="error-msg">{errors.tools?.message}</p>
               <p> Responsibilities </p>
-              <input
+              <textarea
                 {...register("responsibilities")}
                 name="responsibilities"
                 value={application.responsibilities}
