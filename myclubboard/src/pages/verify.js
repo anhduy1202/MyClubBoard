@@ -74,11 +74,26 @@ const verify = () => {
                 has not been added as club lead, please contact your club admin
                 to add your email
               </p>
-              <Link className="text-xl apply-btn" href="/">
+              <Link
+                className="text-xl mt-8 mb-4 font-semibold py-1 px-4 bg-black text-white"
+                href="/"
+              >
                 Back to home
               </Link>
-              <Link className="text-xl apply-btn" href="/instruction">
+              <Link
+                className="text-xl apply-btn"
+                target={"_blank"}
+                href="/instruction"
+              >
                 Instruction to add email
+              </Link>
+              <p className="mt-4 text-xl">Try to create a new club?</p>
+              <Link
+                className="text-xl apply-btn"
+                target={"_blank"}
+                href="https://forms.gle/qGgtfCydHKWTm2g1A"
+              >
+                Fill out this form
               </Link>
             </div>
           )}

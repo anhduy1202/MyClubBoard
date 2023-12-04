@@ -35,6 +35,23 @@ class LeadController extends BaseController {
         let res = await leadService.createPosting(ctx.params.id, ctx.body);
         return res 
     }
+    // Add club lead
+    @Post("/add-lead/:id")
+    async addLead(ctx: any) {
+        const token = ctx.bearer;
+        if (!token) {
+            return handleNotSignedIn(Error("Not signed in"), ctx);
+        }
+        const decoded = jwt.decode(token, { complete: true });
+        let verified = await leadService.verifyLeadClub(decoded?.payload?.email, ctx.params.id);
+        if (!verified) {
+            return handleForbiddenError(Error("Not allowed"), ctx);
+        }
+        // Add lead
+        let res = await leadService.addLead(ctx.params.id, ctx.body);
+        return res
+    }
+    
 
 
 }

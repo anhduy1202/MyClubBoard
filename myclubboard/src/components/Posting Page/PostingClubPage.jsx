@@ -30,7 +30,7 @@ const PostingClubPage = (props) => {
   }, [id]);
   return (
     <MainLayout custom="bg-bg_white">
-      <div className="flex w-full items-center">
+      <div className="flex w-[50vw] items-center">
         <BiArrowBack
           onClick={() => router.back()}
           size={36}

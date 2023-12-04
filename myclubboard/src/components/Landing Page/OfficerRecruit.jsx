@@ -9,6 +9,11 @@ const OfficerRecruit = () => {
       <p className="text-center font-semibold text-2xl">
         Want to recruit officer for your club?
       </p>
+      <img
+        className="md:w-[640px] md:mx-4 w-[320px] shadow-2xl my-12 rounded-lg hover:transition-all hover:duration-200"
+        src="/post.svg"
+        alt=""
+      />
       <div className="flex flex-col my-8">
         <div className="flex">
           <BiSolidLock

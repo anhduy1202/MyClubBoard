@@ -48,7 +48,7 @@ const PostingForm = (props) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const { open, setPopup, token, clubId, user } = props;
+  const { open, setPopup, token, clubId, user, setSuccess } = props;
   const [application, dispatch] = useReducer(reducer, initialState);
   const [isLoading, setLoading] = useState(false);
   const onSubmit = async () => {
@@ -68,9 +68,12 @@ const PostingForm = (props) => {
         body: JSON.stringify(positionData),
       },
     );
-    const data = res;
+    const data = await res.json();
     if (data.error) {
-      alert(data.error);
+      setSuccess(false);
+      return;
+    } else {
+      setSuccess(true);
     }
     setPopup(false);
   };
@@ -79,16 +82,16 @@ const PostingForm = (props) => {
       {(close) => (
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className={`bg-white w-[800px] drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] text-black m-4 text-center rounded-xl p-4 text-xl overflow-scroll h-[600px]`}
+          className={`bg-white w-[320px] md:w-[800px] drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] text-black m-4 text-center rounded-xl p-4 text-xl overflow-scroll h-[600px]`}
         >
           <div className="">
             <div className="flex justify-center mb-4 flex-row">
-              <h1 className="text-2xl font-bold text-center">
+              <h1 className="text-lg md:text-2xl font-bold text-center">
                 Create a new posting
               </h1>
               <button
                 onClick={close}
-                className="text-3xl font-bold text-gray-400 absolute right-10"
+                className="text-xl md:text-3xl font-bold text-gray-400 absolute right-10"
               >
                 X
               </button>

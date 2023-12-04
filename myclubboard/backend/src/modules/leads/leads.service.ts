@@ -50,7 +50,28 @@ export default class LeadService {
             throw new Error('Error creating posting')
         }
         await connection.end();
-        return;
+        return {"message": "Posting created successfully"}
+    }
+
+    async addLead(
+        id: number,
+        body: any
+    ) {
+        const connection = await mysql.createConnection(process.env.DATABASE_URL)
+        // Add lead
+        try {
+            // Check if the email is already in the club_lead table, if it is then return the club_id
+            const data = await connection.execute('select club_id from club_lead where email = ?', [body.email])
+            // Not found
+            if (data[0].length != 0) {
+                throw new Error('Email already exists')
+            }
+            const res = await connection.execute('INSERT INTO club_lead (name, email, club_id) VALUES (?, ?, ?)', [body.name, body.email, id])
+        } catch (e) {
+            throw new Error('Error adding lead')
+        }
+        await connection.end();
+        return {"message": "Lead added successfully"}
     }
 
 

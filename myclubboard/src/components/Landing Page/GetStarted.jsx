@@ -10,8 +10,13 @@ const GetStarted = ({ setPopUp, isPopUp }) => {
         Explore positions from your favorite school clubs
       </p>
       <img
-        className="md:w-[640px] md:mx-4 w-[320px] shadow-2xl my-12 rounded-lg hover:transition-all hover:duration-200"
+        className="hidden md:block md:w-[640px] md:mx-4 w-[320px] shadow-2xl my-12 rounded-lg hover:transition-all hover:duration-200"
         src="/tablet.svg"
+        alt=""
+      />
+      <img
+        className="md:hidden md:w-[640px] md:mx-4 w-[320px] shadow-2xl my-12 rounded-lg hover:transition-all hover:duration-200"
+        src="/mobile.svg"
         alt=""
       />
       <div className="mx-auto mb-5 flex flex-col gap-4">
